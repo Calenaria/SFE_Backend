@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: sfe_mysql
+    image: mysql
+    ports:
+      - "12053:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sfe
+      MYSQL_USER: sfe
+      MYSQL_PASSWORD: sfe 
